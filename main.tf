@@ -9,7 +9,7 @@ provider "google" {
   version = "3.5.0"
   project = "gitops-trial"
   region  = "us-central1"
-  zone    = "us-central1-c"
+  zone    = "us-central1-a"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -17,7 +17,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "terraform-instance1"
   machine_type = "f1-micro"
   boot_disk {
     initialize_params {
