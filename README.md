@@ -1,2 +1,2 @@
 # gitopsdemo
-A simple terraform config project for GCP
+A simple Terraform IaC project for GCP
