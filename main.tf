@@ -12,8 +12,16 @@ provider "google" {
   zone    = "us-central1-a"
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
+#resource "google_compute_network" "vpc_network" {
+#  name = "terraform-network"
+#}
+
+module "vpc" {
+  source  = "terraform-google-modules/network/google"
+  version = "3.3.0"
+
+  project_id   = "${var.project}"
+  network_name = "${var.env}"
 }
 
 resource "google_compute_instance" "vm_instance" {
