@@ -2,12 +2,12 @@ steps:
   - id: 'tf init'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform init -upgrade "]
+    args: ["-c","terraform init"]
   - id: 'tf plan'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform plan  -out=plan.out"]    
+    args: ["-c","terraform plan"]    
   - id: 'tf apply'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform apply plan.out"]    
+    args: ["-c","terraform apply"]    
