@@ -5,6 +5,17 @@ terraform {
     }
   }
 }
+
+# With this backend configuration we are telling Terraform that the
+# created state should be saved in some Google Cloud Bucket with some prefix
+backend "gcs" {
+  ## INSERT YOUR BUCKET HERE!!
+  bucket = "tf-state1212"
+  prefix = "terraform/state"
+  credentials = "terraform-sa.json"
+  }
+}
+
 provider "google" {
   version = "3.5.0"
   project = "gitops-trial"
@@ -12,22 +23,16 @@ provider "google" {
   zone    = "us-central1-a"
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
-}
-
-
-resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance1"
+resource "google_compute_instance" "default" {
+  name = "terraform-test-instance"
   machine_type = "f1-micro"
+
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
     }
   }
+
   network_interface {
-    network = google_compute_network.vpc_network.name
-    access_config {
-    }
+    network = "default"
   }
-}
