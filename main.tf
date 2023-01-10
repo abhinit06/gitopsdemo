@@ -2,6 +2,7 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
+      version = "3.51.0"
     }
   }
 }
@@ -17,7 +18,6 @@ backend "gcs" {
 }
 
 provider "google" {
-  version = "3.5.0"
   project = "gitops-trial"
   region  = "us-central1"
   zone    = "us-central1-a"
