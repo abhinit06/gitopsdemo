@@ -13,7 +13,6 @@ terraform {
    ## INSERT YOUR BUCKET HERE!!
    bucket = "tf-state1212"
    prefix = "terraform/state"
-   credentials = "terraform-sa.json"
  }
 }
 
