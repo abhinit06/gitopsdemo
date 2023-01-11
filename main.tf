@@ -26,7 +26,7 @@ provider "google" {
 
 #Here we define a very small compute instance
 resource "google_compute_instance" "default" {
-  name = "terraform-test-instance"
+  name = "terraform-qa-instance"
   machine_type = "f1-micro"
 
   boot_disk {
