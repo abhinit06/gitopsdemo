@@ -11,7 +11,7 @@ terraform {
 # created state should be saved in some Google Cloud Bucket with some prefix
  backend "gcs" {
    ## INSERT YOUR BUCKET HERE!!
-   bucket = "tf-state1212"
+   bucket = "${PROJECT_ID}-tfstate"
    prefix = "terraform/state"
  }
 }
