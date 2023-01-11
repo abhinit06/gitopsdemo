@@ -19,7 +19,7 @@ terraform {
 
 # We define the "google" provider with the project and the general region + zone
 provider "google" {
-  project = "gitops-trial"
+  project = "${PROJECT_ID}"
   region  = "us-central1"
   zone    = "us-central1-a"
 }
