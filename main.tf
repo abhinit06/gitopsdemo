@@ -11,7 +11,7 @@ terraform {
 # created state should be saved in some Google Cloud Bucket with some prefix
  backend "gcs" {
    ## INSERT YOUR BUCKET HERE!!
-   bucket = "tf-state1212"
+   bucket = "tf-state12121"
    prefix = "terraform/state"
  }
 }
@@ -19,7 +19,7 @@ terraform {
 
 # We define the "google" provider with the project and the general region + zone
 provider "google" {
-  project = "gitops-trial"
+  project = "gitops-demo-374207"
   region  = "us-central1"
   zone    = "us-central1-a"
 }
